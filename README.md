@@ -8,7 +8,7 @@ This library is base on generic, so go1.8 or later is needed.
 
 该方法基于泛型, 需要go1.8及之后的版本.
 
-### Install
+## Install
 
 ```
 go get -u github.com/sukinosuki/go-list-to-tree
