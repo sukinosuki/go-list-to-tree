@@ -1,5 +1,4 @@
 # go-list-to-tree
-___
 
 A generic function to cover a list to a tree struct list.
 
@@ -10,13 +9,12 @@ This library is base on generic, so go1.8 or later is needed.
 该方法基于泛型, 需要go1.8及之后的版本.
 
 ### Install
-___
 
+```
 go get -u github.com/sukinosuki/go-list-to-tree
+```
 
 ## Ssage. 用法
-
-___
 
 You need to let your struct implement three function declared in the `Tree` interface.
 
@@ -37,8 +35,6 @@ type Tree[T any] interface {
 - SetChildren(arr []T)
 
 ## Example. 例子
-
----
 
 ```go
 // declare your own struct like that.
@@ -119,7 +115,6 @@ func TestListToTree() {
 ```
 
 ## Notice
-___
 
 I'm not a perfect developer. please do not use the library at your main project. :(
 
