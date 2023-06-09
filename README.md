@@ -111,8 +111,8 @@ func TestListToTree() {
 		},
 	}
 
-	// Call `ListToTree` function, it will return a tree struct as result.  
-    // 调用ListToTree方法, 返回得到树形结构
+	// Call `ListToTree` function, it will return a tree struct as result. 
+	// 调用ListToTree方法, 返回得到树形结构
 	result := tree.ListToTree(list)
 
 	// you should check if the result are correct.
