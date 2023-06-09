@@ -37,6 +37,13 @@ type Tree[T any] interface {
 ## Example. 例子
 
 ```go
+package main
+
+import (
+	"fmt"
+	"github.com/sukinosuki/go-list-to-tree"
+)
+
 // declare your own struct like that.
 // 定义你自己的类型, 比如这样.
 type Node struct {
@@ -106,11 +113,11 @@ func TestListToTree() {
 
 	// Call `ListToTree` function, it will return a tree struct as result.  
     // 调用ListToTree方法, 返回得到树形结构
-	tree := tree.ListToTree(list)
+	result := tree.ListToTree(list)
 
 	// you should check if the result are correct.
 	// 你需要自己检查结果是否正确
-	fmt.Println("tree ", tree)
+	fmt.Println("result ", result)
 }
 
 ```
