@@ -1,6 +1,7 @@
 package tree
 
 import (
+	"encoding/json"
 	"fmt"
 	"testing"
 )
@@ -32,9 +33,10 @@ func TestListToTree(t *testing.T) {
 			Name: "A",
 		},
 		{
-			ID:   2,
-			PID:  0,
-			Name: "B",
+			ID:       2,
+			PID:      0,
+			Name:     "B",
+			Children: make([]*Node, 0), // if you want the empty slice not a nil as a result
 		},
 		{
 			ID:   3,
@@ -66,4 +68,9 @@ func TestListToTree(t *testing.T) {
 	tree := ListToTree(list)
 
 	fmt.Println("tree ", tree)
+	bytes, err := json.Marshal(tree)
+	if err != nil {
+		return
+	}
+	fmt.Println(string(bytes))
 }

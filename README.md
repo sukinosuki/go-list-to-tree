@@ -1,6 +1,6 @@
 # go-list-to-tree
 
-A generic function to cover a list to a tree struct list.
+A common generic function to covert a list to a tree struct list.
 
 一个将列表转为树形结构的通用泛型方法
 
@@ -14,7 +14,7 @@ This library is base on generic, so go1.8 or later is needed.
 go get -u github.com/sukinosuki/go-list-to-tree
 ```
 
-## Ssage. 用法
+## Usage. 用法
 
 You need to let your struct implement three function declared in the `Tree` interface.
 
@@ -62,8 +62,8 @@ func (n *Node) SetChildren(arr []*Node) {
 
 func TestListToTree() {
 	// The list you need covert to tree struct.
-	// Point struct (*Node) is needed.
-	// 指针类型的列表是必须的
+	// Point type (*Node) item is needed.
+	// 指针类型的列表元素是必须的
 	list := []*Node{
 		{
 			ID:   1,
@@ -73,7 +73,8 @@ func TestListToTree() {
 		{
 			ID:   2,
 			PID:  0,
-			Name: "B",
+			Name: "B", 
+			Children: make([]*Node, 0), // if you do not want the empty slice is nil as a result 
 		},
 		{
 			ID:   3,
@@ -112,6 +113,51 @@ func TestListToTree() {
 	fmt.Println("tree ", tree)
 }
 
+```
+
+#### result
+
+```json
+[
+  {
+    "ID":1,
+    "PID":0,
+    "Children":[
+      {
+        "ID":3,
+        "PID":1,
+        "Children":[
+          {
+            "ID":5,
+            "PID":3,
+            "Children":null,
+            "Name":"A-1-1"
+          },
+          {
+            "ID":6,
+            "PID":3,
+            "Children":null,
+            "Name":"A-1-2"
+          }
+        ],
+        "Name":"A-1"
+      },
+      {
+        "ID":4,
+        "PID":1,
+        "Children":null,
+        "Name":"A-2"
+      }
+    ],
+    "Name":"A"
+  },
+  {
+    "ID":2,
+    "PID":0,
+    "Children":[],
+    "Name":"B"
+  }
+]
 ```
 
 ## Notice
