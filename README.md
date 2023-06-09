@@ -1,6 +1,6 @@
 # go-list-to-tree
 
-A common generic function to covert a list to a tree struct list.
+A common generic function to convert a list to a tree struct list.
 
 一个将列表转为树形结构的通用泛型方法
 
@@ -61,7 +61,7 @@ func (n *Node) SetChildren(arr []*Node) {
 }
 
 func TestListToTree() {
-	// The list you need covert to tree struct.
+	// The list you need convert to tree struct.
 	// Point type (*Node) item is needed.
 	// 指针类型的列表元素是必须的
 	list := []*Node{
