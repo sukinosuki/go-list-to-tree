@@ -1,10 +1,14 @@
-## go-list-to-tree
+# go-list-to-tree
 
-a generic function to cover slice to tree struct.
+A generic function to cover a list to a tree struct list.
 
 一个将列表转为树形结构的通用泛型方法
 
-## usage. 用法
+### Install
+
+go get -u github.com/sukinosuki/go-list-to-tree
+
+### Ssage. 用法
 
 You need to let your struct implement three function declare in the `Tree` interface.
 
@@ -22,7 +26,7 @@ type Tree[T any] interface {
 - GetPid() uint
 - SetChildren(arr []T)
 
-### example. 例子
+### Example. 例子
 
 ```go
 // declare your own struct like that.
