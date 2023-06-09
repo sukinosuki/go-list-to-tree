@@ -1,4 +1,4 @@
-package main
+package list_to_tree
 
 import (
 	"fmt"

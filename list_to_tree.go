@@ -1,4 +1,4 @@
-package main
+package list_to_tree
 
 type Tree[T any] interface {
 	GetId() uint
