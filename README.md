@@ -67,7 +67,7 @@ func (n *Node) SetChildren(arr []*Node) {
 	n.Children = arr
 }
 
-func TestListToTree() {
+func main() {
 	// The list you need convert to tree struct.
 	// Point type (*Node) item is needed.
 	// 指针类型的列表元素是必须的
@@ -81,7 +81,7 @@ func TestListToTree() {
 			ID:   2,
 			PID:  0,
 			Name: "B", 
-			Children: make([]*Node, 0), // if you do not want the empty slice is nil as a result 
+			Children: make([]*Node, 0), // If you do not want the empty children is nil as a result 
 		},
 		{
 			ID:   3,
