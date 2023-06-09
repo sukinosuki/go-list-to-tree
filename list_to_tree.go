@@ -2,7 +2,9 @@ package tree
 
 type Tree[T any] interface {
 	GetId() uint
+
 	GetPid() uint
+
 	SetChildren(arr []T)
 }
 

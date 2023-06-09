@@ -1,23 +1,33 @@
 # go-list-to-tree
+___
 
 A generic function to cover a list to a tree struct list.
 
 一个将列表转为树形结构的通用泛型方法
 
+This library is base on generic, so go1.8 or later is needed.
+
+该方法基于泛型, 需要go1.8及之后的版本.
+
 ### Install
+___
 
 go get -u github.com/sukinosuki/go-list-to-tree
 
-### Ssage. 用法
+## Ssage. 用法
 
-You need to let your struct implement three function declare in the `Tree` interface.
+___
 
-你需要实现 `Tree` 接口的三个方法
+You need to let your struct implement three function declared in the `Tree` interface.
+
+你需要让结构体实现 `Tree` 接口的三个方法
 
 ```golang
 type Tree[T any] interface {
 	GetId() uint
+	
 	GetPid() uint
+	
 	SetChildren(arr []T)
 }
 ```
@@ -26,7 +36,9 @@ type Tree[T any] interface {
 - GetPid() uint
 - SetChildren(arr []T)
 
-### Example. 例子
+## Example. 例子
+
+---
 
 ```go
 // declare your own struct like that.
@@ -106,7 +118,8 @@ func TestListToTree() {
 
 ```
 
-### Notice
+## Notice
+___
 
 I'm not a perfect developer. please do not use the library at your main project. :(
 
